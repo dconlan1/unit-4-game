@@ -1,7 +1,7 @@
 
 body {
-    background-image: url("assets/images/background.png");
-    background-color: #cccccc; 
+    background-image: url("/assets/images/background.png");
+    background: #271010; 
    }
 
 .crystalscollectortitle {
