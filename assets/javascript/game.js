@@ -3,13 +3,13 @@
   var Random=Math.floor(Math.random()*102+19)
   
   // Display random number
-  $('#scoreToMatch').text(Random);
+  $('#computerGuess').text(Random);
   
   //Generate random number for each crystal
-  var num1= Math.floor(Math.random()*12+1)
-  var num2= Math.floor(Math.random()*12+1)
-  var num3= Math.floor(Math.random()*12+1)
-  var num4= Math.floor(Math.random()*12+1)
+  var ruby= Math.floor(Math.random()*12+1)
+  var diamond= Math.floor(Math.random()*12+1)
+  var emerald= Math.floor(Math.random()*12+1)
+  var saphire= Math.floor(Math.random()*12+1)
   
   // Variables to keep track of wins, losses and total
   var playerTotal= 0; 
@@ -17,38 +17,38 @@
   var losses = 0;
   
 
-$('#wins').text(wins);
-$('#losses').text(losses);
+$('#winWin').text(wins);
+$('#lossLoss').text(losses);
 
 // Reset game
 function reset(){
       Random=Math.floor(Math.random()*102+19);
       console.log(Random)
-      $('#scoreToMatch').text(Random);
-      num1= Math.floor(Math.random()*12+1);
-      num2= Math.floor(Math.random()*12+1);
-      num3= Math.floor(Math.random()*12+1);
-      num4= Math.floor(Math.random()*12+1);
+      $('#computerGuess').text(Random);
+      ruby= Math.floor(Math.random()*12+1);
+      diamond= Math.floor(Math.random()*12+1);
+      emerald= Math.floor(Math.random()*12+1);
+      saphire= Math.floor(Math.random()*12+1);
       playerTotal= 0;
-      $('#totalScore').text(playerTotal);
+      $('#total-score').text(playerTotal);
       } 
 // Display wins
 function woohoo(){
 alert("Congrats! You won!");
   wins++; 
-  $('#wins').text(wins);
+  $('#winWin').text(wins);
   reset();
 }
 // Display losses
 function loser(){
 alert ("Sorry! You lose!");
   losses++;
-  $('#losses').text(losses);
+  $('#lossLoss').text(losses);
   reset()
 }
 // Clicking crystals
-  $('.red').on ('click', function(){
-    playerTotal = playerTotal + num1;
+  $('.ruby').on ('click', function(){
+    playerTotal = playerTotal + ruby;
     console.log("New playerTotal= " + playerTotal);
     $('#totalScore').text(playerTotal); 
           //Win & lose conditions
@@ -59,10 +59,10 @@ alert ("Sorry! You lose!");
           loser();
         }   
   })  
-  $('.blue').on ('click', function(){
-    playerTotal = playerTotal + num2;
+  $('.diamond').on ('click', function(){
+    playerTotal = playerTotal + diamond;
     console.log("New playerTotal= " + playerTotal);
-    $('#totalScore').text(playerTotal); 
+    $('#total-score').text(playerTotal); 
         if (playerTotal == Random){
           woohoo();
         }
@@ -70,10 +70,10 @@ alert ("Sorry! You lose!");
           loser();
         } 
   })  
-  $('.yellow').on ('click', function(){
-    playerTotal = playerTotal + num3;
+  $('.emerald').on ('click', function(){
+    playerTotal = playerTotal + emerald;
     console.log("New playerTotal= " + playerTotal);
-    $('#totalScore').text(playerTotal);
+    $('#total-score').text(playerTotal);
 
           if (playerTotal == Random){
           woohoo();
@@ -82,10 +82,10 @@ alert ("Sorry! You lose!");
           loser();
         } 
   })  
-  $('.green').on ('click', function(){
-    playerTotal = playerTotal + num4;
+  $('.saphire').on ('click', function(){
+    playerTotal = playerTotal + saphire;
     console.log("New playerTotal= " + playerTotal);
-    $('#totalScore').text(playerTotal); 
+    $('#total-score').text(playerTotal); 
       
           if (playerTotal == Random){
           woohoo();

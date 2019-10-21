@@ -8,159 +8,106 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="sylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <title>CrystalsCollector</title>
+
 </head>
 
 <body>
-    <!--put in the CrystalsCollerctor! title box(rust)-->
-    <div class="card"
-        style="width: 18rem; height: 5rem; margin-bottom: 1rem; color: white; background: rgba(196, 90, 24, 0.975);">
-        <div class="card-body">
-            <h3>CrystalsCollector!</h3>
+    <div class="container-fluid">
+        <!--put in the CrystalsCollerctor! title box(rust)-->
+        <div class="row row-size">
+            <div class="card crystal1">
+                <div class="card-body">
+                    <h3>CrystalsCollector!</h3>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row mx-md-n5">
         <!--put in the instructions box(creme)-->
-        <div class="card" style="width: 28rem; color: rgb(19, 59, 6); background: rgba(235, 223, 198, 0.975);">
-            <div class="card-body">
-                <ul>
-                    <li>You will be given a random number at the start of the game.</li>
-                    <li>There are four crystals below. By clicking on a crystal you will add a specific amount of points
-                        to your total score.</li>
-                    <li>You win the game by matching your total score to random number, you lose the game if your total
-                        score goes above the random number</li>
-                    <li>The vlaue of each crystal is hidden from you until you click on it.</li>
-                    <li>Each time when the game starts, the game will change the values of each crystal.</li>
-                </ul>
+        <div class="row row-size">
+            <div class="card body1">
+                <div class="card-body">
+                    <ul>
+                        <li>You will be given a random number at the start of the game.</li>
+                        <li>There are four crystals below. By clicking on a crystal you will add a specific amount of
+                            points
+                            to your total score.</li>
+                        <li>You win the game by matching your total score to random number, you lose the game if your
+                            total
+                            score goes above the random number</li>
+                        <li>The vlaue of each crystal is hidden from you until you click on it.</li>
+                        <li>Each time when the game starts, the game will change the values of each crystal.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-<br>
-    <!--put in the computer guess box(green)-->
-    <div class="row">
-        <div class="col-3">
-            <div class="card"
-                style="width: 16rem; height: 8rem; margin-bottom: 1rem; color: rgb(5, 77, 43); background: rgb(93, 177, 138);">
-                <div class="card-body">
-                    <div id="computer-guess">Computer Guess:<p id="computerGuess"></p>
+        <!--put in the computer guess box(green)-->
+        <div class="row row-size">
+            <div class="col col-size1">
+                <div class="card box1">
+                 <div class="card-body">
+                    <div>
+                        <p>Computer Guess: <span id="computerGuess"></span></p>
+                    </div>
+                 </div>
+                </div>
+            </div>
+            <!--put in the wins/losses (light green)-->
+            <div class="col col-size2">
+                <div class="card box2">
+                    <div class="card-body">
+                    <div>
+                        <p>Wins:<span id="winWin"></span></p>
+                    </div>
+                    <div>
+                        <p>Losses:<span id="lossLoss"></span></p>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card"
-                style="width: 8rem; height: 8rem; margin-bottom: 1rem; color: rgb(5, 77, 43); background: rgb(8, 234, 238);">
-                <div class="card-body">
-                    <div id="wins">Wins:<p id="winWin"></p>
-                    </div>
-                    <div id="losses">Losses:<p id="lossLoss"></p>
-                    </div>
-                </div>
+
+        <!--put to the right the wins/losses box(turquise) (-->
+
+        <!--underneath, put in the list of crystals (ruby, diamond, amethyst, and emerald) (30 px height, 20 px width)-->
+        <div class="row">
+            <div type="button">
+                <div> <img src="assets/images/ruby.png" alt="ruby" class="img-thumbnail ruby"></div>
+            </div>
+            <div type="button">
+                <div><img src="assets/images/diamond.png" alt="diamond" class="img-thumbnail diamond"></div>
+            </div>
+            <div type="button">
+                <div><img src="assets/images/emerald.png" alt="emerald" class="img-thumbnail emerald"></div>
+            </div>
+            <div type="button">
+                <div><img src="assets/images/saphire.png" alt="saphire" class="img-thumbnail saphire"></div>
+            </div>
+        </div>
+
+        <!--underneath, put in the slim box "Your total score is:" (green) (10px height, 90px width)-->
+        <div class="row row-size">
+            <div class="card score1">
+                <p>Your total score is: <span id="totalScore"></span></p>
+            </div>
+        </div>
+        <!--underneath, put in the score box (green) (40px height, 90px width)-->
+        <div class="row row-size">
+            <div class="card totalscore1">
+                <p>total score:<span id="total-score"></span></p>
             </div>
         </div>
     </div>
 
-    </div>
-
-    <!--put to the right the wins/losses box(turquise) (-->
-
-    <!--underneath, put in the list of crystals (ruby, diamond, amethyst, and emerald) (30 px height, 20 px width)-->
-        <div class="row" mt-1;>
-            <div type="button">
-               <div id="ruby"> <img src="assets/images/ruby.png" alt="ruby" class="img-thumbnail"></div></div>
-            <div type="button">
-                <div id="diamond"><img src="assets/images/diamond.png" alt="diamond" class="img-thumbnail"></div></div>
-            <div type="button">
-               <div id="emerald"> <img src="assets/images/emerald.png" alt="emerald" class="img-thumbnail"></div></div>
-            <div type="button">
-                <div id="saphire"><img src="assets/images/saphire.png"alt="saphire" class="img-thumbnail"></div></div>
-
-   
-
-
-    </div>
-    <br>
-    <!--underneath, put in the slim box "Your total score is:" (green) (10px height, 90px width)-->
-    <div class="card"
-        style="width: 18rem; height: 2rem; margin-bottom: 1rem; color: white; background: rgba(59, 141, 122, 0.975);">
-        <div id="your-total-score">Your total score is:
-    </div><p  id=totalScore"></p>
-    <!--underneath, put in the score box (green) (40px height, 90px width)-->
-
-    <div class="card"
-        style="width: 18rem; height: 8rem; margin-bottom: 1rem; color: white; background: rgba(59, 141, 122, 0.975);">
-        <div class="card-body">
-            <div id="total-score">0
-            </div>
-        </div>
-
-        <script src="assets/javascript/game.js"></script>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+    <!-- Optional JavaScript -->
+    
 </body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
