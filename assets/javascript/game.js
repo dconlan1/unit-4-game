@@ -1,50 +1,97 @@
-//make sure the page loads fully before executing. 
+  $( document ).ready(function(){
+  // Generates random number to guess
+  var Random=Math.floor(Math.random()*102+19)
+  
+  // Display random number
+  $('#scoreToMatch').text(Random);
+  
+  //Generate random number for each crystal
+  var num1= Math.floor(Math.random()*12+1)
+  var num2= Math.floor(Math.random()*12+1)
+  var num3= Math.floor(Math.random()*12+1)
+  var num4= Math.floor(Math.random()*12+1)
+  
+  // Variables to keep track of wins, losses and total
+  var playerTotal= 0; 
+  var wins= 0;
+  var losses = 0;
+  
 
-$(document).ready(function(){
+$('#wins').text(wins);
+$('#losses').text(losses);
 
-//the ID tags: 
-//<div id="total-score">0; 
-//<div id="computer-guess">
-//<div id="your-total-score">Your total score is:</p>; 
-// <div id="ruby">
-// <div id="diamond">
-//<div id="emerald">
-//<div id="saphire">
-//<div id="your-total-score">
-//<div id="total-score">
-
-//set up a random number generator for the computer to pick a "random number". 
-
-//set up a calculation of how to match the sum of the crystal outputs to the "random number."
-
-//set up an assigned "number" for each crytal. 
-
-var ruby = document.getElementById("ruby");
-ruby.addEventListener("click", function(){
-    addToScore(this.value);
-    checkPlayerScore();
-})
-var diamond = document.getElementById("diamond");
-diamond.addEventListener("click", function(){
-    addToScore(this.value);
-    checkPlayerScore();
-})
-var emerald = document.getElementById("emerald");
-emerald.addEventListener('click', function(){
-    addToScore(this.value);
-    checkPlayerScore();
-} )
-var saphire = document.getElementById("saphire");
-saphire.addEventListener('click', function(){
-    addToScore(this.value);
-    checkPlayerScore();
-})
-//each assigned "number" needs to reset with each new game. 
-
-//if the sum of the crystal outputs match the "random" number, then it's a win. 
-
-//if the sum doesn't match it's a loss. 
-//so, first we need to set up a few variables to hold the values.
-
+// Reset game
+function reset(){
+      Random=Math.floor(Math.random()*102+19);
+      console.log(Random)
+      $('#scoreToMatch').text(Random);
+      num1= Math.floor(Math.random()*12+1);
+      num2= Math.floor(Math.random()*12+1);
+      num3= Math.floor(Math.random()*12+1);
+      num4= Math.floor(Math.random()*12+1);
+      playerTotal= 0;
+      $('#totalScore').text(playerTotal);
+      } 
+// Display wins
+function woohoo(){
+alert("Congrats! You won!");
+  wins++; 
+  $('#wins').text(wins);
+  reset();
 }
-//THIS MARKS THE LAST LINE IN CODE.
+// Display losses
+function loser(){
+alert ("Sorry! You lose!");
+  losses++;
+  $('#losses').text(losses);
+  reset()
+}
+// Clicking crystals
+  $('.red').on ('click', function(){
+    playerTotal = playerTotal + num1;
+    console.log("New playerTotal= " + playerTotal);
+    $('#totalScore').text(playerTotal); 
+          //Win & lose conditions
+        if (playerTotal == Random){
+          woohoo();
+        }
+        else if ( playerTotal > Random){
+          loser();
+        }   
+  })  
+  $('.blue').on ('click', function(){
+    playerTotal = playerTotal + num2;
+    console.log("New playerTotal= " + playerTotal);
+    $('#totalScore').text(playerTotal); 
+        if (playerTotal == Random){
+          woohoo();
+        }
+        else if ( playerTotal > Random){
+          loser();
+        } 
+  })  
+  $('.yellow').on ('click', function(){
+    playerTotal = playerTotal + num3;
+    console.log("New playerTotal= " + playerTotal);
+    $('#totalScore').text(playerTotal);
+
+          if (playerTotal == Random){
+          woohoo();
+        }
+        else if ( playerTotal > Random){
+          loser();
+        } 
+  })  
+  $('.green').on ('click', function(){
+    playerTotal = playerTotal + num4;
+    console.log("New playerTotal= " + playerTotal);
+    $('#totalScore').text(playerTotal); 
+      
+          if (playerTotal == Random){
+          woohoo();
+        }
+        else if ( playerTotal > Random){
+          loser();
+        }
+  });   
+}); 
