@@ -1,7 +1,7 @@
 
 body {
     background-image: url("/assets/images/background.png");
-    background-color: #cccccc;
+    background-color: #cccccc; 
    }
 
 .crystalscollectortitle {
@@ -14,3 +14,4 @@ body {
 h1 {
     font-size: 10px;
 }
+
