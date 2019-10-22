@@ -18,8 +18,11 @@ Here are some screenshots:
 
 2. This is the screenshot of a win. 
 
-<img src="assets/images/win.png">
+<img src="assets/images/you-win.png">
 
 3. This is the screenshot of a loss. 
 
-<img src="assets/images/loss.png">
+<img src="assets/images/you-lose.png">
+
+
+<a href="https://dconlan1.github.io/unit-4-game/.index.html"> Play the game here!</a>
