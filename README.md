@@ -25,4 +25,4 @@ Here are some screenshots:
 <img src="assets/images/you-lose.png">
 
 
-<a href="https://dconlan1.github.io/unit-4-game/.index.html"> Play the game here!</a>
+<a href="https://dconlan1.github.io/unit-4-game/"> Play the game here!</a>
